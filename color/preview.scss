@@ -1,0 +1,198 @@
+@import "sass-collection/_sass-code.scss";
+#preview-body {
+    max-width: 1440px;
+    ul {
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    .prepage {
+        #preview-header-totle {
+            #header {
+                #logo {
+                    float: left;
+                    img {
+                        width: 200px;
+                        height: auto;
+                    }
+                }
+                #block-block-1 {
+                    &:after {
+                        content: "";
+                        display: block;
+                        height: 0px;
+                        clear: both;
+                    }
+                    .rtecenter {
+                        float: right;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+            #header-Bottom {
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 0px;
+                    clear: both;
+                }
+                #block-menu-block-1 {
+                    ul {
+                        margin: 0;
+                        li {
+                            float: left;
+                            padding: 0 5px;
+                        }
+                    }
+                }
+                #block-block-2 {
+                    float: right;
+                }
+            }
+        }
+        #all_banner {
+            #block-views-slideshow-block {
+                .view-content {
+                    ul {
+                        margin: 0px;
+                        li {
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            #block-nodeblock-6 {
+                .field-name-body {
+                    text-align: center;
+                }
+            }
+        }
+        #main {
+            #content {
+                #block-views-travel-recommend-block {
+                    width: 70%;
+                    float: left;
+                    .view-travel-recommend {
+                        ul {
+                            margin: 0px;
+                            li {
+                                float: left;
+                                width: 33%;
+                                .views-field-field-image {
+                                    img {
+                                        width: 100%;
+                                        float: left;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                #block-instagram-block-instagram-block {
+                    width: 25%;
+                    float: right;
+                    a {
+                        img {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+                #block-views-latest-news-block {
+                    width: 100%;
+                    @extend %clearfix;
+                    clear: both;
+                    .view-latest-news {
+                        .view-content {
+                            ul {
+                                margin: 0px;
+                                li {
+                                    @include grid(3, 3%);
+                                    .views-field-field-image {
+                                        img {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                #block-nodeblock-10 {
+                    img {
+                        width: 100%;
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
+    .preview-footer-wrapper {
+        #pre-footer {
+            #block-views-travel-recommend-block-1 {
+                width: 30%;
+                float: left;
+                @include grid(3, 0%);
+                .view-travel-recommend {
+                    .view-header {
+                        p {
+                            margin: 0px;
+                        }
+                    }
+                    .view-content {
+                        ul {
+                            margin: 0px;
+                        }
+                    }
+                }
+            }
+            #block-views-serivce-content-block {
+                width: 30%;
+                float: left;
+                .view-serivce-content {
+                    .view-header {
+                        p {
+                            margin: 0px;
+                        }
+                    }
+                    .view-content {
+                        ul {
+                            margin: 0px;
+                            li {}
+                        }
+                    }
+                }
+            }
+            #block-menu-block-3 {
+                @extend %clearfix;
+                ul {
+                    margin: 0px;
+                    li {
+                        float: left;
+                    }
+                }
+            }
+        }
+        .region-bottom {
+            @extend %clearfix;
+            max-width: 180px;
+            margin: 0 auto;
+            padding-top: 20px;
+            .rtecenter {
+                float: left;
+            }
+        }
+        #block-block-4 {
+            clear: both;
+            text-align: center;
+        }
+    }
+}

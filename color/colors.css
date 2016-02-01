@@ -1,0 +1,110 @@
+/* line 2, colors.scss */
+body {
+  background: #ffffff;
+}
+/* line 4, colors.scss */
+body #page {
+  background: #ffff03;
+}
+/* line 6, colors.scss */
+body #page .header-totle {
+  background: #ffff02;
+}
+/* line 9, colors.scss */
+body #page #content {
+  background: #ffff04;
+}
+/* line 13, colors.scss */
+body .footer-wrapper {
+  background: #ffff05;
+}
+
+/* line 19, colors.scss */
+body {
+  color: #aaaa04;
+}
+/* line 21, colors.scss */
+body a {
+  color: #aaaa05;
+}
+/* line 24, colors.scss */
+body h1 {
+  color: #aaaa01;
+}
+/* line 26, colors.scss */
+body h1 a {
+  color: #aaaa01 !important;
+}
+/* line 31, colors.scss */
+body #page .header-totle {
+  border-color: #ffff55 !important;
+}
+/* line 33, colors.scss */
+body #page .header-totle a {
+  color: #aaaa03;
+}
+/* line 35, colors.scss */
+body #page .header-totle a:hover {
+  color: #cccc01;
+}
+/* line 40, colors.scss */
+body #page #all_banner .region-all-banner #block-nodeblock-6 p {
+  color: #ffff55;
+}
+/* line 45, colors.scss */
+body #page #main .total_title h2 {
+  color: #aaaa02;
+}
+/* line 47, colors.scss */
+body #page #main .total_title h2:after {
+  border-color: #ffff55 !important;
+}
+/* line 50, colors.scss */
+body #page #main .total_title h2 a {
+  color: #aaaa02;
+}
+/* line 55, colors.scss */
+body #page #main #content {
+  color: #aaaa04;
+  border-color: #aaaa05;
+}
+/* line 58, colors.scss */
+body #page #main #content a {
+  color: #aaaa05;
+}
+/* line 61, colors.scss */
+body #page #main #content a:hover {
+  color: #cccc02 !important;
+}
+/* line 65, colors.scss */
+body #page #main #content .field-name-title h2 {
+  color: #b0b0b2;
+}
+/* line 71, colors.scss */
+body #page #main .sidebars a {
+  color: #aaaa05;
+}
+/* line 74, colors.scss */
+body #page #main .sidebars a:hover {
+  color: #cccc02 !important;
+}
+/* line 81, colors.scss */
+body .footer-wrapper p {
+  color: #aaaa05;
+}
+/* line 84, colors.scss */
+body .footer-wrapper a {
+  color: #aaaa05;
+}
+/* line 87, colors.scss */
+body .footer-wrapper a:hover {
+  color: #cccc02 !important;
+}
+/* line 91, colors.scss */
+body .footer-wrapper #block-views-travel-recommend-block-1 a {
+  color: #aaaa07 !important;
+}
+/* line 94, colors.scss */
+body .footer-wrapper #block-views-travel-recommend-block-1 a:hover {
+  color: #cccc03 !important;
+}

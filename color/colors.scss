@@ -1,0 +1,99 @@
+//background
+body {
+    background: #ffffff;
+    #page {
+        background: #ffff03;
+        .header-totle {
+            background: #ffff02;
+        }
+        #content {
+            background: #ffff04;
+        }
+    }
+    .footer-wrapper {
+        background: #ffff05;
+    }
+}
+
+//color
+body {
+    color: #aaaa04;
+    a {
+        color: #aaaa05;
+    }
+    h1 {
+        color: #aaaa01;
+        a {
+            color: #aaaa01!important;
+        }
+    }
+    #page {
+        .header-totle {
+            border-color: #ffff55!important;
+            a {
+                color: #aaaa03;
+                &:hover {
+                    color: #cccc01;
+                }
+            }
+        }
+        #all_banner .region-all-banner #block-nodeblock-6 p {
+            color: #ffff55;
+        }
+        #main {
+            .total_title {
+                h2 {
+                    color: #aaaa02;
+                    &:after {
+                        border-color: #ffff55!important;
+                    }
+                    a {
+                        color: #aaaa02;
+                    }
+                }
+            }
+            #content {
+                color: #aaaa04;
+                border-color: #aaaa05;
+                a {
+                    color: #aaaa05;
+                }
+                a:hover {
+                    color: #cccc02!important;
+                }
+                .field-name-title {
+                    h2 {
+                        color: #b0b0b2;
+                    }
+                }
+            }
+            .sidebars {
+                a {
+                    color: #aaaa05;
+                }
+                a:hover {
+                    color: #cccc02!important;
+                }
+            }
+        }
+    }
+    .footer-wrapper {
+        p{
+            color: #aaaa05;
+        }
+        a {
+            color: #aaaa05;
+        }
+        a:hover {
+            color: #cccc02!important;
+        }
+        #block-views-travel-recommend-block-1 {
+            a {
+                color: #aaaa07!important;
+            }
+            a:hover {
+                color: #cccc03!important;
+            }
+        }
+    }
+}

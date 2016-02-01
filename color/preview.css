@@ -1,0 +1,536 @@
+@charset "UTF-8";
+/******************************************************************************************************************
+
+                                                                                                    extend code
+
+******************************************************************************************************************/
+/*************************************
+                              佈局
+**************************************/
+/* line 23, sass-collection/_sass-code.scss */
+.style-mask1 .style-wrapper, .style-mask2 .style-wrapper, .style-float-img1 .style-wrapper, .style-float-img2 .style-wrapper, .style-float-img3 .style-wrapper, #preview-body .prepage #main #content #block-views-latest-news-block, #preview-body .preview-footer-wrapper #pre-footer #block-menu-block-3, #preview-body .preview-footer-wrapper .region-bottom {
+  *zoom: 1;
+}
+/* line 26, sass-collection/_sass-code.scss */
+.style-mask1 .style-wrapper:before, .style-mask2 .style-wrapper:before, .style-float-img1 .style-wrapper:before, .style-float-img2 .style-wrapper:before, .style-float-img3 .style-wrapper:before, #preview-body .prepage #main #content #block-views-latest-news-block:before, #preview-body .preview-footer-wrapper #pre-footer #block-menu-block-3:before, #preview-body .preview-footer-wrapper .region-bottom:before, .style-mask1 .style-wrapper:after, .style-mask2 .style-wrapper:after, .style-float-img1 .style-wrapper:after, .style-float-img2 .style-wrapper:after, .style-float-img3 .style-wrapper:after, #preview-body .prepage #main #content #block-views-latest-news-block:after, #preview-body .preview-footer-wrapper #pre-footer #block-menu-block-3:after, #preview-body .preview-footer-wrapper .region-bottom:after {
+  content: " ";
+  display: table;
+}
+/* line 30, sass-collection/_sass-code.scss */
+.style-mask1 .style-wrapper:after, .style-mask2 .style-wrapper:after, .style-float-img1 .style-wrapper:after, .style-float-img2 .style-wrapper:after, .style-float-img3 .style-wrapper:after, #preview-body .prepage #main #content #block-views-latest-news-block:after, #preview-body .preview-footer-wrapper #pre-footer #block-menu-block-3:after, #preview-body .preview-footer-wrapper .region-bottom:after {
+  clear: both;
+}
+
+/* line 36, sass-collection/_sass-code.scss */
+.style-float-img3 .style-wrapper .content-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+/* line 46, sass-collection/_sass-code.scss */
+.style-mask2 .style-wrapper .image:after, .style-float-img3 .style-wrapper .image a:after {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+/*************************************
+                             特效區
+**************************************/
+/********************
+                 圖片
+********************/
+/********************
+                 選單
+********************/
+/********************
+                 按鈕
+********************/
+/*************************************
+                             動畫區
+**************************************/
+/******************************************************************************************************************
+
+                                                                                                             mixin code
+                                                                                                             
+******************************************************************************************************************/
+/*************************************
+                              兼容標籤
+**************************************/
+/*************************************
+                              佈局
+**************************************/
+/*************************************
+                             特效區
+**************************************/
+/********************
+                 圖片
+********************/
+/********************
+                 圖型
+********************/
+/********************
+                 選單
+********************/
+/********************
+                 按鈕
+********************/
+/*************************************
+                             動畫區
+**************************************/
+/*************************************
+                              佈局
+**************************************/
+/**********************************************************
+                                            標籤在圖片上
+**********************************************************/
+/* line 17, sass-collection/_drupal-block-style.scss */
+.style1-tag1 .style-wrapper {
+  position: relative;
+}
+/* line 19, sass-collection/_drupal-block-style.scss */
+.style1-tag1 .style-wrapper .taxonomy {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  width: 150px;
+  height: auto;
+  background: #7ac8cc;
+  color: white;
+  margin: 20px 0px 0px 20px;
+  padding: 10px 0px;
+}
+
+/*
+<div class="style-wrapper">
+<div class="image">[field_image]</div>
+<div class="taxonomy">[field_news_taxonomy]</div>
+</div>
+*/
+/**********************************************************
+                                             遮罩圖片
+***********************************************************/
+/* line 49, sass-collection/_drupal-block-style.scss */
+.style-mask1 .style-wrapper {
+  position: relative;
+}
+/* line 53, sass-collection/_drupal-block-style.scss */
+.style-mask1 .style-wrapper .image img {
+  float: left;
+}
+/* line 57, sass-collection/_drupal-block-style.scss */
+.style-mask1 .style-wrapper .content-wrapper {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  padding: 20px;
+}
+/* line 66, sass-collection/_drupal-block-style.scss */
+.style-mask1 .style-wrapper .content-wrapper * {
+  color: white;
+}
+
+/*
+<div class="style-wrapper">
+<div class="image">[field_image]</div>
+<div class="content-wrapper">
+<div class="title">[title]</div>
+<div class="create-date">[created]</div>
+</div>
+*/
+/* line 85, sass-collection/_drupal-block-style.scss */
+.style-mask2 .style-wrapper {
+  position: relative;
+}
+/* line 88, sass-collection/_drupal-block-style.scss */
+.style-mask2 .style-wrapper * {
+  color: white;
+}
+/* line 92, sass-collection/_drupal-block-style.scss */
+.style-mask2 .style-wrapper .image img {
+  float: left;
+}
+/* line 95, sass-collection/_drupal-block-style.scss */
+.style-mask2 .style-wrapper .image:after {
+  content: "";
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+}
+/* line 102, sass-collection/_drupal-block-style.scss */
+.style-mask2 .style-wrapper .content-wrapper {
+  position: absolute;
+  bottom: 0px;
+  padding: 20px;
+}
+
+/*<div class="style-wrapper">
+<div class="image">[field_discuss_taxonomy_image]</div>
+<div class="content-wrapper">
+<div class="title">[name]</div>
+<div class="slogan">[field_second]</div>
+</div>*/
+/***********************************************************
+                                           圖片至左
+***********************************************************/
+/* line 125, sass-collection/_drupal-block-style.scss */
+.style-float-img1 .style-wrapper {
+  position: relative;
+}
+/* line 128, sass-collection/_drupal-block-style.scss */
+.style-float-img1 .style-wrapper .image {
+  float: left;
+  width: 50%;
+}
+/* line 132, sass-collection/_drupal-block-style.scss */
+.style-float-img1 .style-wrapper .content-wrapper {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0px 5%;
+}
+
+/*<div class="style-wrapper">
+<div class="image">[field_image]</div>
+<div class="content-wrapper">
+<div class="title">[title]</div>
+<div class="create-date">[created]</div>
+<div class="taxonomy">[field_news_taxonomy]</div>
+</div>*/
+/* line 152, sass-collection/_drupal-block-style.scss */
+.style-float-img2 .style-wrapper {
+  position: relative;
+}
+/* line 155, sass-collection/_drupal-block-style.scss */
+.style-float-img2 .style-wrapper .image {
+  float: left;
+  width: 50%;
+}
+/* line 158, sass-collection/_drupal-block-style.scss */
+.style-float-img2 .style-wrapper .image img {
+  float: left;
+}
+/* line 162, sass-collection/_drupal-block-style.scss */
+.style-float-img2 .style-wrapper .taxonomy {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 15px 5%;
+}
+/* line 169, sass-collection/_drupal-block-style.scss */
+.style-float-img2 .style-wrapper .taxonomy:before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background: #7ac8cc;
+  position: absolute;
+  top: 0px;
+}
+/* line 179, sass-collection/_drupal-block-style.scss */
+.style-float-img2 .style-wrapper .content-wrapper {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0px 5%;
+}
+
+/*<div class="style-wrapper">
+<div class="image">[field_image]</div>
+<div class="taxonomy">[field_news_taxonomy]</div>
+<div class="content-wrapper">
+<div class="title">[title]</div>
+<div class="create-date">[created]</div>
+</div>*/
+/* line 200, sass-collection/_drupal-block-style.scss */
+.style-float-img3 {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 202, sass-collection/_drupal-block-style.scss */
+.style-float-img3 .style-wrapper {
+  position: relative;
+}
+/* line 205, sass-collection/_drupal-block-style.scss */
+.style-float-img3 .style-wrapper .image {
+  position: relative;
+  float: left;
+  width: 20%;
+}
+/* line 209, sass-collection/_drupal-block-style.scss */
+.style-float-img3 .style-wrapper .image:after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 219, sass-collection/_drupal-block-style.scss */
+.style-float-img3 .style-wrapper .image a:after {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  background: rgba(0, 0, 0, 0.6);
+  content: "";
+  display: block;
+}
+/* line 226, sass-collection/_drupal-block-style.scss */
+.style-float-img3 .style-wrapper .image a:before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ffffff;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+/* line 240, sass-collection/_drupal-block-style.scss */
+.style-float-img3 .style-wrapper .image img {
+  float: left;
+}
+/* line 244, sass-collection/_drupal-block-style.scss */
+.style-float-img3 .style-wrapper .content-wrapper {
+  position: absolute;
+  left: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0px 5%;
+}
+/* line 258, sass-collection/_drupal-block-style.scss */
+.style-float-img3:hover .style-wrapper .image a:after {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+/*<div class="style-wrapper">
+<div class="image">[field_youtube]</div>
+<div class="content-wrapper">
+<div class ="content">
+<div class="title">[title]</div>
+<div class="create-date">[created]</div>
+</div>
+</div>*/
+/* line 2, preview.scss */
+#preview-body {
+  max-width: 1440px;
+}
+/* line 5, preview.scss */
+#preview-body ul li {
+  list-style: none;
+}
+/* line 7, preview.scss */
+#preview-body ul li a {
+  text-decoration: none;
+}
+/* line 15, preview.scss */
+#preview-body .prepage #preview-header-totle #header #logo {
+  float: left;
+}
+/* line 17, preview.scss */
+#preview-body .prepage #preview-header-totle #header #logo img {
+  width: 200px;
+  height: auto;
+}
+/* line 23, preview.scss */
+#preview-body .prepage #preview-header-totle #header #block-block-1:after {
+  content: "";
+  display: block;
+  height: 0px;
+  clear: both;
+}
+/* line 29, preview.scss */
+#preview-body .prepage #preview-header-totle #header #block-block-1 .rtecenter {
+  float: right;
+}
+/* line 31, preview.scss */
+#preview-body .prepage #preview-header-totle #header #block-block-1 .rtecenter img {
+  width: 50px;
+  height: 50px;
+}
+/* line 39, preview.scss */
+#preview-body .prepage #preview-header-totle #header-Bottom:after {
+  content: "";
+  display: block;
+  height: 0px;
+  clear: both;
+}
+/* line 46, preview.scss */
+#preview-body .prepage #preview-header-totle #header-Bottom #block-menu-block-1 ul {
+  margin: 0;
+}
+/* line 48, preview.scss */
+#preview-body .prepage #preview-header-totle #header-Bottom #block-menu-block-1 ul li {
+  float: left;
+  padding: 0 5px;
+}
+/* line 54, preview.scss */
+#preview-body .prepage #preview-header-totle #header-Bottom #block-block-2 {
+  float: right;
+}
+/* line 62, preview.scss */
+#preview-body .prepage #all_banner #block-views-slideshow-block .view-content ul {
+  margin: 0px;
+}
+/* line 65, preview.scss */
+#preview-body .prepage #all_banner #block-views-slideshow-block .view-content ul li img {
+  width: 100%;
+}
+/* line 73, preview.scss */
+#preview-body .prepage #all_banner #block-nodeblock-6 .field-name-body {
+  text-align: center;
+}
+/* line 80, preview.scss */
+#preview-body .prepage #main #content #block-views-travel-recommend-block {
+  width: 70%;
+  float: left;
+}
+/* line 84, preview.scss */
+#preview-body .prepage #main #content #block-views-travel-recommend-block .view-travel-recommend ul {
+  margin: 0px;
+}
+/* line 86, preview.scss */
+#preview-body .prepage #main #content #block-views-travel-recommend-block .view-travel-recommend ul li {
+  float: left;
+  width: 33%;
+}
+/* line 90, preview.scss */
+#preview-body .prepage #main #content #block-views-travel-recommend-block .view-travel-recommend ul li .views-field-field-image img {
+  width: 100%;
+  float: left;
+}
+/* line 99, preview.scss */
+#preview-body .prepage #main #content #block-instagram-block-instagram-block {
+  width: 25%;
+  float: right;
+}
+/* line 103, preview.scss */
+#preview-body .prepage #main #content #block-instagram-block-instagram-block a img {
+  width: 50px;
+  height: 50px;
+}
+/* line 109, preview.scss */
+#preview-body .prepage #main #content #block-views-latest-news-block {
+  width: 100%;
+  clear: both;
+}
+/* line 115, preview.scss */
+#preview-body .prepage #main #content #block-views-latest-news-block .view-latest-news .view-content ul {
+  margin: 0px;
+}
+/* line 117, preview.scss */
+#preview-body .prepage #main #content #block-views-latest-news-block .view-latest-news .view-content ul li {
+  width: 31.33333%;
+}
+/* line 443, sass-collection/_sass-code.scss */
+#preview-body .prepage #main #content #block-views-latest-news-block .view-latest-news .view-content ul li:nth-child(n) {
+  margin-bottom: 3%;
+  margin-right: 3%;
+  float: left;
+}
+/* line 448, sass-collection/_sass-code.scss */
+#preview-body .prepage #main #content #block-views-latest-news-block .view-latest-news .view-content ul li:nth-child(3n) {
+  margin-right: 0;
+}
+/* line 120, preview.scss */
+#preview-body .prepage #main #content #block-views-latest-news-block .view-latest-news .view-content ul li .views-field-field-image img {
+  width: 100%;
+}
+/* line 130, preview.scss */
+#preview-body .prepage #main #content #block-nodeblock-10 img {
+  width: 100%;
+  float: left;
+}
+/* line 140, preview.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-views-travel-recommend-block-1 {
+  width: 30%;
+  float: left;
+  width: 33.33333%;
+}
+/* line 443, sass-collection/_sass-code.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-views-travel-recommend-block-1:nth-child(n) {
+  margin-bottom: 0%;
+  margin-right: 0%;
+  float: left;
+}
+/* line 448, sass-collection/_sass-code.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-views-travel-recommend-block-1:nth-child(3n) {
+  margin-right: 0;
+}
+/* line 146, preview.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-views-travel-recommend-block-1 .view-travel-recommend .view-header p {
+  margin: 0px;
+}
+/* line 151, preview.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-views-travel-recommend-block-1 .view-travel-recommend .view-content ul {
+  margin: 0px;
+}
+/* line 157, preview.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-views-serivce-content-block {
+  width: 30%;
+  float: left;
+}
+/* line 162, preview.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-views-serivce-content-block .view-serivce-content .view-header p {
+  margin: 0px;
+}
+/* line 167, preview.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-views-serivce-content-block .view-serivce-content .view-content ul {
+  margin: 0px;
+}
+/* line 176, preview.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-menu-block-3 ul {
+  margin: 0px;
+}
+/* line 178, preview.scss */
+#preview-body .preview-footer-wrapper #pre-footer #block-menu-block-3 ul li {
+  float: left;
+}
+/* line 184, preview.scss */
+#preview-body .preview-footer-wrapper .region-bottom {
+  max-width: 180px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+/* line 189, preview.scss */
+#preview-body .preview-footer-wrapper .region-bottom .rtecenter {
+  float: left;
+}
+/* line 193, preview.scss */
+#preview-body .preview-footer-wrapper #block-block-4 {
+  clear: both;
+  text-align: center;
+}

@@ -1,0 +1,1367 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+
+@import "init";
+
+/* HTML element (SMACSS base) rules */
+
+@import "normalize";
+
+/* Layout rules */
+
+@import "sass-collection/_sass-code.scss";
+@import "layouts/responsive";
+
+/* Component (SMACSS module) rules */
+
+@import "components/misc";
+// Optionally, add your own components here.
+@import "print";
+$main:#B0B0B2;
+$main2:#F5D34B;
+$main3:#939393;
+$main4:#CAAD2D;
+$main5:#2EAFD7;
+$icon-border:#9ED8F6;
+
+/* SMACSS theme rules */
+
+
+/* @import "theme-A"; */
+
+
+/* @import "theme-B"; */
+
+body {
+    font-family: "微軟正黑體", Helvetica, Arial;
+    background: url("/sites/all/themes/jienda_template/images/background/07.jpg") fixed top center;
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $main;
+        &:focus {
+            outline: none;
+        }
+    }
+    span {
+        color: $main;
+    }
+    p {
+        //color: $main;
+        font-size: 16px;
+        line-height: 30px;
+        img {
+            height: auto!important;
+            width: 100%!important;
+        }
+    }
+    #back-top {
+        right: 10px;
+        #link {
+            display: none;
+        }
+        #button {}
+    }
+    #admin-menu {
+        p {
+            margin: 0px;
+            padding: 2px 10px 3px;
+            font-size: 12px;
+            line-height: 1.4em;
+            color: white;
+        }
+    }
+    #page {
+        //background: #F9F9F9;
+        #main {
+            #navigation {
+                display: none;
+            }
+            .views-row {
+                .views-field-title {
+                    padding: 10px;
+                    a {
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+                .views-field-body {
+                    padding: 0 10px;
+                }
+                .views-field-field-image {
+                    img {
+                        width: 100%;
+                    }
+                }
+                .views-field-nid {
+                    padding: 0 10px;
+                    a {
+                        &:after {
+                            content: "→";
+                            margin: 0;
+                            display: inlineblock;
+                            @include transition(all 0.1s);
+                        }
+                        &:hover {
+                            &:after {
+                                content: "→";
+                                margin: 0;
+                                display: inlineblock;
+                                padding: 0 0 0 10px;
+                                @include transition(all 0.1s);
+                            }
+                        }
+                    }
+                }
+                .views-field-changed {
+                    padding: 10px;
+                    line-height: 30px;
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+            #content {
+                .breadcrumb {
+                    display: none;
+                }
+                .pager {
+                    .pager-next {
+                        a {
+                            position: relative;
+                            &:after {
+                                content: "→";
+                                margin: 0;
+                                display: inlineblock;
+                                /*                                padding: 0 10px 0 0px;
+                                box-sizing:border-box;*/
+                                position: absolute;
+                                left: 50px;
+                                @include transition(all 0.5s);
+                            }
+                        }
+                        &:hover {
+                            a {
+                                position: relative;
+                                &:after {
+                                    content: "→";
+                                    margin: 0;
+                                    display: inlineblock;
+                                    /*                                    padding: 0 0px 0 10px;
+                                    box-sizing:border-box;*/
+                                    left: 60px;
+                                    position: absolute;
+                                    @include transition(all 0.5s);
+                                }
+                            }
+                        }
+                    }
+                    .pager-previous {
+                        a {
+                            position: relative;
+                            &:before {
+                                content: "←";
+                                margin: 0;
+                                display: inlineblock;
+                                position: absolute;
+                                right: 50px;
+                                @include transition(all 0.5s);
+                            }
+                        }
+                        &:hover {
+                            a {
+                                position: relative;
+                                &:before {
+                                    content: "←";
+                                    margin: 0;
+                                    /*                                    display: inlineblock;
+                                    padding: 0 10px 0 0;*/
+                                    right: 60px;
+                                    position: absolute;
+                                    @include transition(all 0.5s);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*#loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    transform: rotate(0deg) scale(1.9);
+    background: url('../images/57841.gif') 50% 50% no-repeat #FFFFFF;
+}
+
+.spinner {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    text-align: center;
+}
+
+.dot1,
+.dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #333;
+    border-radius: 100%;
+}
+
+.dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes sk-rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+*/
+
+//頁首icon
+#block-menu-menu-menu-icon {
+    //float: right;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    @include transform-xy(0,
+    -50%);
+    li {
+        //float: left;
+        list-style: none;
+        display: inline-block;
+        height: 50px;
+        margin-right: 10px;
+        width: 50px;
+        a {
+            //color: transparent!important;
+            float: left;
+            height: 50px;
+            width: 50px;
+            text-indent: -9999px;
+            border: 2px solid $icon-border;
+            border-radius: 50%;
+        }
+        #weixin {
+            background: url("../images/wechat.png") no-repeat scroll 0 0;
+            background-size: 50px;
+            @include scaleX(1);
+            @include transition(all 0.5s);
+            &:hover {
+                @include scaleX(-1);
+                @include transition(all 0.5s);
+            }
+        }
+        #line {
+            background: url("../images/line.png") no-repeat scroll 0 0;
+            background-size: 50px;
+            @include scaleX(1);
+            @include transition(all 0.5s);
+            &:hover {
+                @include scaleX(-1);
+                @include transition(all 0.5s);
+            }
+        }
+        #facebook {
+            background: url("../images/01-index3_17.png") no-repeat scroll 0 0;
+            background-size: 50px;
+            @include scaleX(1);
+            @include transition(all 0.5s);
+            &:hover {
+                @include scaleX(-1);
+                @include transition(all 0.5s);
+            }
+        }
+        #phone {
+            background: url("../images/01-index3_19.png") no-repeat scroll 0 0;
+            background-size: 50px;
+            @include scaleX(1);
+            @include transition(all 0.5s);
+            &:hover {
+                @include scaleX(-1);
+                @include transition(all 0.5s);
+            }
+        }
+        #mail {
+            background: url("../images/01-index3_21.png") no-repeat scroll 0 0;
+            background-size: 50px;
+            @include scaleX(1);
+            @include transition(all 0.5s);
+            &:hover {
+                @include scaleX(-1);
+                @include transition(all 0.5s);
+            }
+        }
+    }
+}
+
+//頁尾icon---------------------------------------------------------------------------------------------------------------------------
+#weixin2 {
+    background: url("../images/02-about3_13.png") no-repeat scroll 0 0;
+    &:hover {
+        background: url("../images/02-about3_13_1.png") no-repeat scroll 0 0;
+    }
+}
+
+#line2 {
+    background: url("../images/02-about3_15.png") no-repeat scroll 0 0;
+    &:hover {
+        background: url("../images/02-about3_15_1.png") no-repeat scroll 0 0;
+    }
+}
+
+#facebook2 {
+    background: url("../images/02-about3_17.png") no-repeat scroll 0 0;
+    &:hover {
+        background: url("../images/02-about3_17_1.png") no-repeat scroll 0 0;
+    }
+}
+
+#phone2 {
+    background: url("../images/02-about3_19.png") no-repeat scroll 0 0;
+    &:hover {
+        background: url("../images/02-about3_19_1.png") no-repeat scroll 0 0;
+    }
+}
+
+#mail2 {
+    background: url("../images/02-about3_21.png") no-repeat scroll 0 0;
+    &:hover {
+        background: url("../images/02-about3_21_1.png") no-repeat scroll 0 0;
+    }
+}
+
+body {
+    #page {
+        .header-totle {
+            border-left: 5px solid;
+            position: relative;
+            #header {
+                .header-wrapper {
+                    .header-inner {
+                        position: relative;
+                        #logo {
+                            padding: 20px;
+                            max-width: 150px;
+                        }
+                        #block-menu-block-4 {
+                            position: absolute;
+                            width: 50px;
+                            right: 10px;
+                            top: 150px;
+                            z-index: 9999;
+                            ul {
+                                li {
+                                    display: inline-block;
+                                    height: 50px;
+                                    width: 50px;
+                                    margin-bottom: 10px;
+                                    a {
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                        color: transparent;
+                                        text-indent: -9999px;
+                                        overflow: hidden;
+                                        border: 2px solid $icon-border;
+                                        border-radius: 50%;
+                                        /*   &:before {
+                                            content: "";
+                                            display: block;
+                                            @include absolute-align(left,top);
+                                            width: 100%;
+                                            height: 100%;
+                                            background: #ffffff;
+                                            z-index: -99999;
+                                        }*/
+                                    }
+                                    a#Line {
+                                        background: url(../images/line.png) no-repeat;
+                                        background-size: 50px;
+                                        @include scaleX(1);
+                                        @include transition(all 0.5s);
+                                        &:hover {
+                                            @include scaleX(-1);
+                                            @include transition(all 0.5s);
+                                        }
+                                    }
+                                    a#Wechat {
+                                        background: url("../images/wechat.png") no-repeat scroll 0 0;
+                                        background-size: 50px;
+                                        @include scaleX(1);
+                                        @include transition(all 0.5s);
+                                        &:hover {
+                                            @include scaleX(-1);
+                                            @include transition(all 0.5s);
+                                        }
+                                    }
+                                    #facebook {
+                                        background: url("../images/01-index3_17.png") no-repeat scroll 0 0;
+                                        background-size: 50px;
+                                        @include scaleX(1);
+                                        @include transition(all 0.5s);
+                                        &:hover {
+                                            @include scaleX(-1);
+                                            @include transition(all 0.5s);
+                                        }
+                                    }
+                                    #phone {
+                                        background: url("../images/01-index3_19.png") no-repeat scroll 0 0;
+                                        background-size: 50px;
+                                        @include scaleX(1);
+                                        @include transition(all 0.5s);
+                                        &:hover {
+                                            @include scaleX(-1);
+                                            @include transition(all 0.5s);
+                                        }
+                                    }
+                                    #mail {
+                                        background: url("../images/01-index3_21.png") no-repeat scroll 0 0;
+                                        background-size: 50px;
+                                        @include scaleX(1);
+                                        @include transition(all 0.5s);
+                                        &:hover {
+                                            @include scaleX(-1);
+                                            @include transition(all 0.5s);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #header-Bottom {
+                .region-header-bottom {
+                    padding: 10px 0;
+                    max-width: 1400px;
+                    border-top: 1px solid #C0C0C0;
+                    position: relative;
+                    #block-menu-block-1 {
+                        margin: 0px;
+                        ul {
+                            margin: 0px;
+                            @extend %clearfix;
+                            a {
+                                &:hover {
+                                    //color: #41A3FF;
+                                }
+                            }
+                        }
+                    }
+                    //RWD_menu
+                    #sidr-wrapper-0 {
+                        height: 25px;
+                        position: absolute;
+                        right: 20px;
+                        width: 25px;
+                        z-index: 9999;
+                        a {
+                            color: #1F85AB;
+                            font-size: 50px;
+                            left: 50%;
+                            position: absolute;
+                            top: 50%;
+                            transform: translate(-70%, -60%);
+                            &:hover {
+                                color: #185c75;
+                            }
+                        }
+                    }
+                    //頁首電話欄位
+                    #block-views-contact-us-block-2 {
+                        margin: 0px 10px;
+                        padding-right: 15px;
+                        ul {
+                            margin: 0px;
+                        }
+                    }
+                }
+            }
+        }
+        #all_banner {
+            .flexslider {
+                .flex-direction-nav {
+                    //上一頁
+                    .flex-nav-prev {
+                        position: absolute;
+                        left: 10px;
+                        top: 50%;
+                        z-index: 30;
+                        a {
+                            background: url(../images/arrow_1.png) no-repeat;
+                            width: 20px;
+                            height: 35px;
+                            text-indent: -9999px;
+                            overflow: hidden;
+                            color: transparent;
+                        }
+                    }
+                    //下一頁
+                    .flex-nav-next {
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        z-index: 30;
+                        a {
+                            background: url(../images/arrow_2.png) no-repeat;
+                            width: 20px;
+                            height: 35px;
+                            text-indent: 9999px;
+                            overflow: hidden;
+                            color: transparent;
+                        }
+                    }
+                }
+                //下面的點
+                .flex-control-nav {
+                    display: none;
+                }
+            }
+            .region-all-banner {
+                //首頁字區塊
+                #block-nodeblock-6 {
+                    padding: 25px 15px;
+                    background-color: white;
+                    text-align: center;
+                    p {
+                        //color: #F5D34B;
+                        font-size: 25px;
+                        line-height: 30px;
+                        margin: 0px;
+                        @extend %clearfix;
+                    }
+                    .field-name-title {
+                        display: none;
+                    }
+                }
+                //all-banner-word
+                .node-banner {
+                    position: relative;
+                    overflow: hidden;
+                    h2 {
+                        @extend %ab-center;
+                        max-width: 170px;
+                        text-align: center;
+                        margin: 0 auto;
+                        color: white;
+                        font-size: 30px;
+                        text-shadow: 2px 2px #434a54;
+                    }
+                    img {
+                        min-width: 720px;
+                        float: left;
+                    }
+                }
+                //關於我們服務宗旨
+                #block-nodeblock-17 {
+                    position: relative;
+                    min-height: 500px;
+                    @extend %clearfix;
+                    overflow: hidden;
+                    .node-nodeblock {
+                        @extend %ab-center;
+                        z-index: 300;
+                        .field-name-body {
+                            p {
+                                color: #515151;
+                                padding: 0 0px;
+                            }
+                        }
+                        .field-name-title {
+                            text-align: center;
+                            h2 {
+                                color: white;
+                                text-shadow: 2px 2px #434a54;
+                            }
+                        }
+                        .field-name-field-taxonmy-banner {
+                            img {
+                                //min-width: 720px;
+                                //opacity: 0;
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #main {
+            padding: 20px 40px 30px 40px;
+            //background-color: #F9F9F9;
+            //標題樣式
+            .total_title {
+                padding: 5px 0;
+                h2 {
+                    position: relative;
+                    padding-left: 15px;
+                    font-size: 20px;
+                    //color: $main;
+                    &:after {
+                        content: "";
+                        height: 20px;
+                        left: 0;
+                        position: absolute;
+                        top: 8px;
+                        border-left: 5px solid;
+                        width: 1px;
+                    }
+                }
+            }
+            //側邊行程推薦
+            #block-views-travel-recommend-block-2 {
+                .view-travel-recommend {
+                    .view-content {
+                        ul {
+                            margin: 0px;
+                            .views-row {
+                                float: left;
+                                width: 100%;
+                                border-bottom: 1px solid #c0c0c0;
+                                padding: 16px 0;
+                                .views-field-field-image {
+                                    overflow: hidden;
+                                    img {
+                                        width: 100%;
+                                        transition: 0.1s ease-in-out;
+                                        float: left;
+                                    }
+                                }
+                                .views-field-body {
+                                    padding: 0px;
+                                    p {
+                                        margin: 0px;
+                                    }
+                                }
+                                .views-field-title {
+                                    padding: 0px;
+                                    a {
+                                        font-weight: bold;
+                                        line-height: 30px;
+                                        &:hover {
+                                            color: #8c8c8c;
+                                        }
+                                    }
+                                }
+                                .views-field-nid {
+                                    padding: 0px;
+                                }
+                                /*                                .views-field-nid {
+                                    a {
+                                        &:after {
+                                            content: "→";
+                                            margin: 0;
+                                            display: inlineblock;
+                                            @include transition(all 0.1s);
+                                        }
+                                        &:hover {
+                                            &:after {
+                                                content: "→";
+                                                margin: 0;
+                                                display: inlineblock;
+                                                padding: 0 0 0 10px;
+                                                @include transition(all 0.1s);
+                                            }
+                                        }
+                                    }
+                                }*/
+                            }
+                            .views-row:hover {
+                                .views-field-title {
+                                    a {
+                                        //color: #8c8c8c;
+                                    }
+                                }
+                                .views-field-field-image {
+                                    img {
+                                        transform: rotate(0deg) scale(1.1);
+                                    }
+                                }
+                            }
+                            .views-row-first {
+                                padding-top: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+            #content {
+                //首頁行程公佈區塊
+                #block-views-travel-recommend-block {
+                    .view-content {
+                        ul {
+                            margin: 0px;
+                            position: relative;
+                            .views-field-field-image {
+                                img {
+                                    float: left;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+                //行程推薦hover特效------------------------------------------------------------
+                .row-effect {
+                    position: relative;
+                    overflow: hidden;
+                    .views-field-title {
+                        @extend %clearfix;
+                        position: absolute;
+                        text-align: center;
+                        padding: 0;
+                        @include transition(all 0.1s);
+                        top: 0px;
+                        left: 0px;
+                        height: 100%;
+                        width: 100%;
+                        background: rgba(0, 0, 0, 0);
+                        a {
+                            @include transition(all 0.5s);
+                            position: absolute;
+                            top: 80px;
+                            left: 50%;
+                            color: white;
+                            @include transform-xy(-50%,
+                            -50%);
+                            opacity: 0;
+                        }
+                        .hover {
+                            @extend %ab-full-screen;
+                            position: absolute;
+                            @include transform-xy(-50%,
+                            -30%);
+                            width: 100%;
+                            height: auto;
+                            left: 55%;
+                            top: 50%;
+                            z-index: 100;
+                            .path {
+                                float: left;
+                                stroke-dasharray: 1000;
+                                stroke-dashoffset: 1000;
+                                @include transition(all .5s ease-in-out);
+                            }
+                            #Layer_1 {}
+                        }
+                        &:hover {
+                            a {
+                                opacity: 100;
+                                z-index: 100;
+                                top: 50%;
+                                left: 50%;
+                                @include transform-xy(-50%,
+                                -50%);
+                            }
+                            .path {
+                                @include transition(all .5s ease-in-out);
+                                stroke-dashoffset: 0;
+                            }
+                        }
+                    }
+                    .field-name-title,
+                    .views-field-title {
+                        &:hover {
+                            background: rgba(0, 0, 0, 0.4);
+                            &:after {
+                                content: "";
+                                height: 30px;
+                                left: 48%;
+                                position: absolute;
+                                top: 50%;
+                                border-bottom: 3px solid white;
+                                width: 10px;
+                            }
+                            /*                            &:before {
+                                content: "";
+                                left: 50%;
+                                top: 50%;
+                                position: absolute;
+                                                             border: 3px solid white;
+                                width: 90%;
+                                z-index: 100;
+                                box-sizing: border-box;
+                                padding: 30% 0;
+                                @include transform-xy(-50%,
+                                -50%);
+                            }*/
+                        }
+                    }
+                }
+                /*                .row-effect-ios {
+                    position: relative;
+                    .field-name-title,
+                    .views-field-title {
+                        background: rgba(0, 0, 0, 0.4);
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        a {
+                            opacity: 0;
+                            z-index: 0;
+                            &:hover {
+                                a {
+                                    opacity: 100;
+                                    top: 50%;
+                                    left: 50%;
+                                    @include transform-xy(-50%,
+                                    -50%);
+                                    &:before {
+                                        content: "";
+                                        left: 50%;
+                                        top: 50%;
+                                        position: absolute;
+                                        border: 3px solid white;
+                                        width: 90%;
+                                        box-sizing: border-box;
+                                        padding: 30% 0;
+                                        @include transform-xy(-50%,
+                                        -50%);
+                                        z-index: 200;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }*/
+                //首頁團照分享區塊
+                #block-instagram-block-instagram-block {
+                    position: relative;
+                    &:after {
+                        content: "";
+                        height: 21px;
+                        right: 0;
+                        position: absolute;
+                        top: 18.5px;
+                        width: 21px;
+                        background: url(../images/ig.png) no-repeat;
+                    }
+                }
+                //首頁活動消息區塊
+                #block-views-latest-news-block {
+                    margin-bottom: 0px;
+                    .view-content {
+                        ul {
+                            margin: 0px;
+                            .views-row {
+                                background-color: white;
+                                .views-field-field-image {
+                                    overflow: hidden;
+                                    img {
+                                        width: 100%;
+                                        float: left;
+                                        transition: 0.1s ease-in-out;
+                                    }
+                                }
+                                .views-field-title {
+                                    line-height: 30px;
+                                    float: left;
+                                    a {
+                                        //color: $main4;
+                                    }
+                                }
+                                .views-field-changed {
+                                    line-height: 30px;
+                                    span {
+                                        color: $main3;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                            .views-row:hover {
+                                .views-field-title {
+                                    a {
+                                        //color: #af9321;
+                                    }
+                                }
+                                .views-field-field-image {
+                                    img {
+                                        transform: rotate(0deg) scale(1.1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                //首頁下方自選圖
+                #block-nodeblock-10 {
+                    .field-name-title {
+                        //display: none;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+                //首頁下方區塊
+                .front-special-block {
+                    position: relative;
+                    .views-field-nothing {
+                        @include absolute-align(center,
+                        center,
+                        10px);
+                        display: block;
+                        background: rgba(0, 0, 0, 0.5);
+                        text-align: center;
+                        width: 80%;
+                        p {
+                            color: #ffffff!important;
+                            margin: 0px;
+                        }
+                        a {
+                            color: #ffffff!important;
+                        }
+                        .title {
+                            @include responsive-font-size(55px,
+                            45px,
+                            30px,
+                            16px);
+                            display: block;
+                            padding: 10px;
+                        }
+                        .body {
+                            margin-top: 20px;
+                            @include responsive-display(block,
+                            block,
+                            none,
+                            none);
+                        }
+                    }
+                }
+                //行程公佈頁
+                .travelpage {
+                    .view-content {
+                        .item-list {
+                            ul {
+                                margin: 0px;
+                                .views-row {
+                                    float: left;
+                                    width: 100%;
+                                    margin-bottom: 30px;
+                                    background-color: white;
+                                    padding-bottom: 10px;
+                                    .views-field-title {
+                                        line-height: 30px;
+                                    }
+                                    .views-field-field-image {
+                                        float: left;
+                                        overflow: hidden;
+                                        img {
+                                            width: 100%;
+                                            transition: 0.1s ease-in-out;
+                                            float: left;
+                                        }
+                                    }
+                                }
+                                .views-row:hover {
+                                    .views-field-title {
+                                        a {
+                                            //color: #8c8c8c;
+                                        }
+                                    }
+                                    .views-field-field-image {
+                                        img {
+                                            transform: rotate(0deg) scale(1.1);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                //行程公佈內頁
+                .node-travel-publish {
+                    .field-name-title {
+                        h2 {
+                            border-bottom: 1px solid $main3;
+                            margin: 0 0 24px 0;
+                            color: $main3;
+                        }
+                    }
+                }
+                //活動消息頁
+                .lastest-page {
+                    .view-content {
+                        ul {
+                            margin: 0px;
+                            .views-row {
+                                background-color: white;
+                                .views-field-field-image {
+                                    overflow: hidden;
+                                    img {
+                                        float: left;
+                                        transition: 0.1s ease-in-out;
+                                    }
+                                }
+                                .views-field-title {
+                                    float: left;
+                                    line-height: 30px;
+                                    a {
+                                        //color: $main4;
+                                    }
+                                }
+                                .views-field-changed {
+                                    float: right;
+                                }
+                            }
+                            .views-row:hover {
+                                .views-field-title {
+                                    a {
+                                        //color: #af9321;
+                                    }
+                                }
+                                .views-field-field-image {
+                                    img {
+                                        transform: rotate(0deg) scale(1.1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                //活動消息內頁
+                .node-latest-news {
+                    .field-name-title {
+                        border-bottom: 1px solid #c0c0c0;
+                        h2 {
+                            //color: $main2;
+                            margin: 0px;
+                        }
+                    }
+                    .field-name-post-date {
+                        line-height: 3em;
+                        position: relative;
+                        .field-item {
+                            color: $main;
+                        }
+                    }
+                    .field-name-body {
+                        p {
+                            margin: 0px;
+                        }
+                    }
+                }
+                //服務內容頁
+                .view-serivce-content {
+                    .view-content {
+                        ul {
+                            margin: 0px;
+                            .views-row {
+                                .views-field-title {
+                                    padding: 0px;
+                                    line-height: 30px;
+                                }
+                                .views-field-field-image {
+                                    overflow: hidden;
+                                    img {
+                                        width: 100%;
+                                        transition: 0.2s ease-in-out;
+                                        float: left;
+                                    }
+                                }
+                            }
+                            .views-row:hover {
+                                .views-field-title {
+                                    a {
+                                        //color: #8c8c8c;
+                                    }
+                                }
+                                .views-field-field-image {
+                                    img {
+                                        transform: rotate(0deg) scale(1.1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                //服務內容頁
+                .node-service-content {
+                    .field-name-title {
+                        h2 {
+                            //color: $main3;
+                        }
+                    }
+                }
+                //聯絡我們頁區塊
+                #block-views-contact-us-block-1 {
+                    .total_title {
+                        padding: 0px;
+                    }
+                    .view-content {
+                        ul {
+                            margin: 0px;
+                            .views-row {
+                                .views-field-field-body {
+                                    p {
+                                        margin: 0px;
+                                        line-height: 30px;
+                                    }
+                                }
+                                .views-field-title {
+                                    padding: 0px;
+                                }
+                                .views-field-field-map {
+                                    iframe {
+                                        width: 100%;
+                                        pointer-events: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                //聯絡我們webform
+                #block-webform-client-block-13 {
+                    #webform-client-form-13 {
+                        .webform-component-markup {
+                            p {
+                                color: black;
+                            }
+                        }
+                        .webform-component-textfield {
+                            position: relative;
+                            .field-prefix {
+                                position: absolute;
+                                top: 50%;
+                                @include transform-xy(50%,
+                                -50%);
+                                border-right: 1px solid;
+                                padding-right: 10px;
+                            }
+                            input {
+                                width: 100%;
+                                padding: 10px 10px 10px 40px;
+                            }
+                        }
+                        .webform-component--email {
+                            input {
+                                width: 100%;
+                            }
+                        }
+                        textarea {
+                            padding: 10px;
+                        }
+                    }
+                }
+                //關於建達頁
+                .node-about-us {
+                    max-width: 800px;
+                    margin: 0 auto;
+                    .field-name-title {
+                        text-align: center;
+                        //color: $main;
+                    }
+                    .view-about-us {
+                        .view-content {
+                            ul {
+                                .views-row {
+                                    img {
+                                        width: 100%;
+                                        max-width: 280px;
+                                        max-height: 131px;
+                                    }
+                                }
+                                .first {
+                                    img {
+                                        max-width: 490px;
+                                        max-height: 295px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .node-46 {
+                    .gau {
+                        margin: 0 auto;
+                        max-width: 1024px;
+                        iframe {
+                            height: 700px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //footer-menu
+    .footer-wrapper {
+        //background-color: #44474E;
+        #footer {
+            margin: 0 auto;
+            max-width: 1400px;
+            border-bottom: 1px solid #B0B0B2;
+            padding: 20px;
+            p {
+                font-weight: bold;
+                margin: 0px;
+            }
+            a {
+                line-height: 30px;
+            }
+            //頁尾選單
+            #block-menu-block-3 {
+                .menu-block-3 {
+                    .menu {
+                        margin: 0px;
+                        a {
+                            //color: $main;
+                            font-weight: bold;
+                            &:hover {
+                                //color: #8c8c8c;
+                            }
+                        }
+                        .menu__item {
+                            list-style: none;
+                            text-align: center;
+                            p {
+                                color: $main;
+                            }
+                            /*                            ul {
+                                li {
+                                    width: 100%;
+                                    float: left;
+                                    a {
+                                        color: $main;
+                                        font-weight: bold;
+                                        &:hover {
+                                            color: #8c8c8c;
+                                        }
+                                    }
+                                }
+                            }*/
+                        }
+                    }
+                }
+            }
+            //頁尾行程公佈
+            #block-views-travel-recommend-block-1 {
+                color: $main;
+                ul {
+                    margin: 0px;
+                    .views-row {
+                        margin-bottom: 20px;
+                        .views-field-title {
+                            a {
+                                //color: $main2;
+                                font-weight: bold;
+                                font-size: 18px;
+                                &:hover {
+                                    color: #e0bc2a;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //頁尾服務內容
+            #block-views-serivce-content-block {
+                color: $main;
+                ul {
+                    margin: 0px;
+                    .views-row {
+                        a {
+                            //color: $main;
+                            font-size: 14px;
+                            &:hover {
+                                //color: #8c8c8c;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //footer-icon
+        .region-bottom {
+            //頁尾選單
+            #block-menu-menu-footer-icon {
+                @extend %clearfix;
+                width: 100%;
+                text-align: center;
+                padding-top: 20px;
+                li {
+                    list-style: none;
+                    display: inline-block;
+                    a {
+                        overflow: hidden;
+                        text-indent: -9999px;
+                        display: block;
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+        //footer-bottom
+        //頁尾字
+        #block-block-4 {
+            margin: 0px;
+            p {
+                color: $main;
+                margin: 0px;
+                font-size: 12px;
+                line-height: 40px;
+                text-align: center;
+            }
+        }
+    }
+}
